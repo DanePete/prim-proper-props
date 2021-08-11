@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import GuestList from '../GuestList/GuestList';
 
 function App() {
   let [guestList, setGuestList] = useState([]);
@@ -109,12 +110,15 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {guestList.map(guest => (
+          {/* {guestList.map(guest => (
             <tr key={guest.id}>
               <td>{guest.name}</td>
               <td>{String(guest.kidsMeal)}</td>
             </tr>
-          ))}
+          ))} */}
+          <GuestList 
+            list={guestList}
+          />
         </tbody>
       </table>
       <h2>Dinner Supplies</h2>
