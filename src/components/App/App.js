@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import GuestList from '../GuestList/GuestList';
 import DinnerSupplies from '../DinnerSupplies/DinnerSupplies';
+import GuestForm from '../GuestForm/GuestForm';
 
 function App() {
   let [guestList, setGuestList] = useState([]);
@@ -61,7 +62,10 @@ function App() {
       <h2>Party Leader</h2>
       {guestList[0] && <h3>{guestList[0].name}</h3>}
       <h2>Add a new guest</h2>
-      <form onSubmit={handleSubmit}>
+      <GuestForm 
+        onCreateGuest = {addGuest}
+      />
+      {/* <form onSubmit={handleSubmit}>
         <label>
           Name
         </label>
@@ -101,7 +105,7 @@ function App() {
           </div>
         </div>
         <button type="submit">Add Guest</button>
-      </form>
+      </form> */}
       <h2>Guest List</h2>
       <table>
         <thead>
